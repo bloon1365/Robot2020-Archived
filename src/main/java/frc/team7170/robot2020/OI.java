@@ -14,7 +14,10 @@ import edu.wpi.first.wpilibj.Joystick;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+
     public static final double JOY_DEADZONE = 0.05;
+    public static final double DRIVE_THROTTLE = 0.5;
+
 
     public final Joystick LEFT_JOY = new Joystick(RobotMap.LEFT_JOYSTICK.value);
     public final Joystick RIGHT_JOY = new Joystick(RobotMap.RIGHT_JOYSTICK.value);
@@ -34,7 +37,7 @@ public class OI {
         return Math.abs(raw) < JOY_DEADZONE ? 0.0 : raw;
     }
 
-    public double getRighttJoyY() {
+    public double getRightJoyY() {
         double raw = RIGHT_JOY.getY();
         return Math.abs(raw) < JOY_DEADZONE ? 0.0 : raw;
     }

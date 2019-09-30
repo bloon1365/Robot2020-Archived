@@ -21,7 +21,9 @@ public enum RobotMap {
     RIGHT_MOTOR_FOLLOWER(4),
 
     LEFT_JOYSTICK(1),
-    RIGHT_JOYSTICK(2);
+    RIGHT_JOYSTICK(2),
+
+    ;
 
     public final int value;
 
