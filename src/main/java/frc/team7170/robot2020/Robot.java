@@ -18,6 +18,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team7170.robot2020.commands.TankDrive;
 import frc.team7170.robot2020.subsystems.Drivebase;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import frc.team7170.robot2020.subsystems.FrontArmControl;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -31,6 +32,7 @@ public class Robot extends TimedRobot
 {
 
     public static final Drivebase drivebase = new Drivebase();
+    public static final FrontArmControl FrontArmControl = new FrontArmControl();
     public static OI oi;
 
     private Command autonomousCommand;

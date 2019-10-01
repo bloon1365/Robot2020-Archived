@@ -1,8 +1,7 @@
 package frc.team7170.robot2020.subsystems;
+
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
-
-
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.team7170.robot2020.RobotMap;
 import frc.team7170.robot2020.Robot;

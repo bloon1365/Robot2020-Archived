@@ -15,6 +15,21 @@ import edu.wpi.first.wpilibj.Joystick;
  */
 public class OI {
 
+    public final Joystick LEFT_TRIGGER = new Joystick(RobotMap.L_TRIGGER.value);
+    public final Joystick RIGHT_TRIGGER = new Joystick(RobotMap.R_TRIGGER.value);
+
+
+    public double getLeftTrigger() {
+        return LEFT_TRIGGER.getY();
+    }
+
+    public double getRightTrigger() {
+        return RIGHT_TRIGGER.getY();
+    }
+
+
+
+
     public static final double JOY_DEADZONE = 0.05;
     public static final double DRIVE_THROTTLE = 0.5;
 

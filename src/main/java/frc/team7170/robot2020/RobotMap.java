@@ -23,6 +23,11 @@ public enum RobotMap {
     LEFT_JOYSTICK(1),
     RIGHT_JOYSTICK(2),
 
+    L_TRIGGER(1),
+    R_TRIGGER(1),
+
+    LEFT_ARM_MOTOR(5),
+    RIGHT_ARM_MOTOR(6),
     ;
 
     public final int value;
