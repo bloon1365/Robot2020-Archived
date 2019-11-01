@@ -15,45 +15,38 @@ import edu.wpi.first.wpilibj.Joystick;
  */
 public class OI {
 
-    public final Joystick LEFT_TRIGGER = new Joystick(RobotMap.L_TRIGGER.value);
-    public final Joystick RIGHT_TRIGGER = new Joystick(RobotMap.R_TRIGGER.value);
-
-
-    public double getLeftTrigger() {
-        return LEFT_TRIGGER.getY();
-    }
-
-    public double getRightTrigger() {
-        return RIGHT_TRIGGER.getY();
-    }
-
-
-
 
     public static final double JOY_DEADZONE = 0.05;
     public static final double DRIVE_THROTTLE = 0.5;
 
 
-    public final Joystick LEFT_JOY = new Joystick(RobotMap.LEFT_JOYSTICK.value);
-    public final Joystick RIGHT_JOY = new Joystick(RobotMap.RIGHT_JOYSTICK.value);
+    public final Joystick JOYSTICK = new Joystick(RobotMap.JOYSTICK.value);
+
+    public double getLeftTrigger() {
+        return JOYSTICK.getRawAxis(2);
+    }
+
+    public double getRightTrigger() {
+        return JOYSTICK.getRawAxis(3);
+    }
 
     public double getLeftJoyX() {
-        double raw = LEFT_JOY.getX();
+        double raw = JOYSTICK.getRawAxis(RobotMap.LEFT_JOYSTICK_X.value);
         return Math.abs(raw) < JOY_DEADZONE ? 0.0 : raw;
     }
 
     public double getLeftJoyY() {
-        double raw = LEFT_JOY.getY();
+        double raw = JOYSTICK.getRawAxis(RobotMap.LEFT_JOYSTICK_Y.value);
         return Math.abs(raw) < JOY_DEADZONE ? 0.0 : raw;
     }
 
     public double getRightJoyX() {
-        double raw = RIGHT_JOY.getX();
+        double raw = JOYSTICK.getRawAxis(RobotMap.RIGHT_JOYSTICK_X.value);
         return Math.abs(raw) < JOY_DEADZONE ? 0.0 : raw;
     }
 
     public double getRightJoyY() {
-        double raw = RIGHT_JOY.getY();
+        double raw = JOYSTICK.getRawAxis(RobotMap.RIGHT_JOYSTICK_Y.value);
         return Math.abs(raw) < JOY_DEADZONE ? 0.0 : raw;
     }
 

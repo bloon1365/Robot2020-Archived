@@ -15,19 +15,23 @@ package frc.team7170.robot2020;
  */
 public enum RobotMap {
 
-    LEFT_MOTOR(0),
-    LEFT_MOTOR_FOLLOWER(3),
-    RIGHT_MOTOR(1),
-    RIGHT_MOTOR_FOLLOWER(4),
+    LEFT_MOTOR(11),
+    LEFT_MOTOR_FOLLOWER(12),
+    RIGHT_MOTOR(15),
+    RIGHT_MOTOR_FOLLOWER(16),
 
-    LEFT_JOYSTICK(1),
-    RIGHT_JOYSTICK(2),
+    JOYSTICK(0),
 
-    L_TRIGGER(1),
-    R_TRIGGER(1),
+    L_TRIGGER(2),
+    R_TRIGGER(3),
 
-    LEFT_ARM_MOTOR(5),
-    RIGHT_ARM_MOTOR(6),
+    RIGHT_JOYSTICK_X(4),
+    RIGHT_JOYSTICK_Y(5),
+    LEFT_JOYSTICK_X(0),
+    LEFT_JOYSTICK_Y(1),
+
+    LEFT_ARM_MOTOR(14),
+    RIGHT_ARM_MOTOR(10),
     ;
 
     public final int value;

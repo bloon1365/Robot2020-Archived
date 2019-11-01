@@ -31,8 +31,13 @@ import frc.team7170.robot2020.subsystems.FrontArmControl;
 public class Robot extends TimedRobot 
 {
 
+    public static void main(String[] args){
+        Robot.startRobot(Robot::new);
+    }
+
+    //Runs commands
     public static final Drivebase drivebase = new Drivebase();
-    public static final FrontArmControl FrontArmControl = new FrontArmControl();
+//    public static final FrontArmControl FrontArmControl = new FrontArmControl();
     public static OI oi;
 
     private Command autonomousCommand;

@@ -5,10 +5,7 @@ import frc.team7170.robot2020.Robot;
 
 
 public class ManualFrontArm extends Command {
-    public ManualFrontArm() {
-
-        requires(Robot.FrontArmControl);
-    }
+    public ManualFrontArm() { requires(Robot.FrontArmControl); }
 
     @Override
     protected void initialize() {
@@ -21,7 +18,6 @@ public class ManualFrontArm extends Command {
                 Robot.oi.getLeftTrigger(),
                 Robot.oi.getRightTrigger()
         );
-
 
     }
 
