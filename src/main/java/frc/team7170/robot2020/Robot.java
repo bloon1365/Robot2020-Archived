@@ -17,7 +17,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team7170.robot2020.commands.TankDrive;
 import frc.team7170.robot2020.subsystems.Drivebase;
+import frc.team7170.robot2020.commands.ManualElevator;
+import frc.team7170.robot2020.commands.ManualFrontArm;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import frc.team7170.robot2020.subsystems.Elevator;
 import frc.team7170.robot2020.subsystems.FrontArmControl;
 
 /**
@@ -35,9 +38,10 @@ public class Robot extends TimedRobot
         Robot.startRobot(Robot::new);
     }
 
-    //Runs commands
+    //Runs subsystems
     public static final Drivebase drivebase = new Drivebase();
-//    public static final FrontArmControl FrontArmControl = new FrontArmControl();
+    public static final FrontArmControl FrontArmControl = new FrontArmControl();
+    public static final Elevator Elevator = new Elevator();
     public static OI oi;
 
     private Command autonomousCommand;
@@ -52,6 +56,8 @@ public class Robot extends TimedRobot
     {
         oi = new OI();
         chooser.addDefault("Default Auto", new TankDrive());
+        chooser.addDefault("Default Auto", new ManualElevator());
+        chooser.addDefault("Default Auto", new ManualFrontArm());
         // chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
     }

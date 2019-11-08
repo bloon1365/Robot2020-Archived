@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.Joystick;
  */
 public class OI {
 
+    //Misc values
 
     public static final double JOY_DEADZONE = 0.05;
     public static final double DRIVE_THROTTLE = 0.5;
@@ -22,13 +23,22 @@ public class OI {
 
     public final Joystick JOYSTICK = new Joystick(RobotMap.JOYSTICK.value);
 
+    //Button Functions
+
+    public boolean getLB() {return JOYSTICK.getRawButton(RobotMap.BUTTON_LB.value);}
+    public boolean getRB() {return JOYSTICK.getRawButton(RobotMap.BUTTON_RB.value);}
+
+    //Trigger Functions
+
     public double getLeftTrigger() {
-        return JOYSTICK.getRawAxis(2);
+        return JOYSTICK.getRawAxis(RobotMap.L_TRIGGER.value);
     }
 
     public double getRightTrigger() {
-        return JOYSTICK.getRawAxis(3);
+        return JOYSTICK.getRawAxis(RobotMap.R_TRIGGER.value);
     }
+
+    //Joystick Functions
 
     public double getLeftJoyX() {
         double raw = JOYSTICK.getRawAxis(RobotMap.LEFT_JOYSTICK_X.value);
@@ -36,7 +46,7 @@ public class OI {
     }
 
     public double getLeftJoyY() {
-        double raw = JOYSTICK.getRawAxis(RobotMap.LEFT_JOYSTICK_Y.value);
+        double raw = -JOYSTICK.getRawAxis(RobotMap.LEFT_JOYSTICK_Y.value);
         return Math.abs(raw) < JOY_DEADZONE ? 0.0 : raw;
     }
 

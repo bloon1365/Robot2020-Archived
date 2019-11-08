@@ -21,7 +21,8 @@ public class TankDrive extends Command {
         Robot.drivebase.set(
                 ControlMode.PercentOutput,
                 Robot.oi.getLeftJoyY() * OI.DRIVE_THROTTLE,
-                Robot.oi.getRightJoyY() * OI.DRIVE_THROTTLE);
+                Robot.oi.getRightJoyY() * OI.DRIVE_THROTTLE
+        );
 }
 
     @Override

@@ -25,9 +25,13 @@ public class FrontArmControl extends Subsystem {
         rightArmMotor.follow(leftArmMotor);
     }
 
-    public void setArmPercent(double left, double right){
-        left = 0 - left;
-        power = left + right;
+    public void setArmPercent(boolean left, boolean right){
+        if (left = true) {
+            power = 1;
+        }
+        if (right = true) {
+            power = -1;
+        }
         leftArmMotor.set(ControlMode.PercentOutput, power);
     }
 
