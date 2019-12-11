@@ -42,16 +42,16 @@ public enum RobotMap {
     LEFT_JOYSTICK_X(0),
     LEFT_JOYSTICK_Y(1),
 
-    BUTTON_A(0),
-    BUTTON_B(1),
-    BUTTON_X(2),
-    BUTTON_Y(3),
-    BUTTON_LB(4),
-    BUTTON_RB(5),
-    BUTTON_BACK(6),
-    BUTTON_START(7),
-    JOYSTICK_BUTTON_L(8),
-    JOYSTICK_BUTTON_R(9),
+    BUTTON_A(1),
+    BUTTON_B(2),
+    BUTTON_X(3),
+    BUTTON_Y(4),
+    BUTTON_LB(5),
+    BUTTON_RB(6),
+    BUTTON_BACK(7),
+    BUTTON_START(8),
+    JOYSTICK_BUTTON_L(9),
+    JOYSTICK_BUTTON_R(10),
 
     ;
 

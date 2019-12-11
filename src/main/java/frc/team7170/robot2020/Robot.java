@@ -7,6 +7,7 @@
 
 package frc.team7170.robot2020;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.LimitSwitchNormal;
 import com.ctre.phoenix.motorcontrol.LimitSwitchSource;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
@@ -22,6 +23,9 @@ import frc.team7170.robot2020.commands.ManualFrontArm;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import frc.team7170.robot2020.subsystems.Elevator;
 import frc.team7170.robot2020.subsystems.FrontArmControl;
+import edu.wpi.first.wpilibj.Compressor;
+import edu.wpi.first.wpilibj.Timer;
+
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -43,6 +47,12 @@ public class Robot extends TimedRobot
     public static final FrontArmControl FrontArmControl = new FrontArmControl();
     public static final Elevator Elevator = new Elevator();
     public static OI oi;
+    private final Timer m_timer = new Timer();
+    public double value = 1;
+
+    Compressor c = new Compressor(6);
+
+
 
     private Command autonomousCommand;
     private SendableChooser<Command> chooser = new SendableChooser<>();
@@ -60,6 +70,8 @@ public class Robot extends TimedRobot
         chooser.addDefault("Default Auto", new ManualFrontArm());
         // chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
+
+        c.enabled();
     }
 
     /**
@@ -91,7 +103,7 @@ public class Robot extends TimedRobot
      * to the switch structure below with additional strings & commands.
      */
     @Override
-    public void autonomousInit() 
+    public void autonomousInit()
     {
         autonomousCommand = chooser.getSelected();
 
@@ -107,6 +119,9 @@ public class Robot extends TimedRobot
         {
             autonomousCommand.start();
         }
+        m_timer.start();
+        drivebase.set(ControlMode.PercentOutput, 35,35);
+
     }
 
     /**
@@ -115,6 +130,9 @@ public class Robot extends TimedRobot
     @Override
     public void autonomousPeriodic() 
     {
+        if (m_timer.get() > value); {
+            drivebase.set(ControlMode.PercentOutput,0,0);
+    }
         Scheduler.getInstance().run();
     }
 
@@ -156,6 +174,6 @@ public class Robot extends TimedRobot
         motor.configForwardLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyOpen, 0);
         motor.configNominalOutputForward(0.0 , 0);
         motor.configNominalOutputForward(0.0 , 0);
-        motor.configClosedloopRamp(0.5,0);
+        motor.configClosedloopRamp(0.25,0);
     }
 }

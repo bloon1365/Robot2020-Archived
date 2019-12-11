@@ -28,6 +28,16 @@ public class OI {
     public boolean getLB() {return JOYSTICK.getRawButton(RobotMap.BUTTON_LB.value);}
     public boolean getRB() {return JOYSTICK.getRawButton(RobotMap.BUTTON_RB.value);}
 
+    public boolean getA() {return JOYSTICK.getRawButton(RobotMap.BUTTON_A.value);}
+    public boolean getB() {return JOYSTICK.getRawButton(RobotMap.BUTTON_B.value);}
+    public boolean getX() {return JOYSTICK.getRawButton(RobotMap.BUTTON_X.value);}
+    public boolean getY() {return JOYSTICK.getRawButton(RobotMap.BUTTON_Y.value);}
+
+    public boolean getBack() {return JOYSTICK.getRawButton(RobotMap.BUTTON_BACK.value);}
+    public boolean getStart() {return JOYSTICK.getRawButton(RobotMap.BUTTON_START.value);}
+    public boolean getJoystickButtonL() {return JOYSTICK.getRawButton(RobotMap.JOYSTICK_BUTTON_L.value);}
+    public boolean getJoystickButtonR() {return JOYSTICK.getRawButton(RobotMap.JOYSTICK_BUTTON_R.value);}
+
     //Trigger Functions
 
     public double getLeftTrigger() {
