@@ -16,6 +16,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.team7170.robot2020.commands.EndEffector;
 import frc.team7170.robot2020.commands.TankDrive;
 import frc.team7170.robot2020.subsystems.Drivebase;
 import frc.team7170.robot2020.commands.ManualElevator;
@@ -25,6 +26,8 @@ import frc.team7170.robot2020.subsystems.Elevator;
 import frc.team7170.robot2020.subsystems.FrontArmControl;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.CameraServer;
+import frc.team7170.robot2020.subsystems.Solnoid;
 
 
 /**
@@ -46,6 +49,7 @@ public class Robot extends TimedRobot
     public static final Drivebase drivebase = new Drivebase();
     public static final FrontArmControl FrontArmControl = new FrontArmControl();
     public static final Elevator Elevator = new Elevator();
+    public static final Solnoid Solnoid = new Solnoid();
     public static OI oi;
     private final Timer m_timer = new Timer();
     public double value = 1;
@@ -68,10 +72,12 @@ public class Robot extends TimedRobot
         chooser.addDefault("Default Auto", new TankDrive());
         chooser.addDefault("Default Auto", new ManualElevator());
         chooser.addDefault("Default Auto", new ManualFrontArm());
+        chooser.addDefault("Default Auto", new EndEffector());
         // chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
 
         c.enabled();
+        CameraServer.getInstance().startAutomaticCapture();
     }
 
     /**

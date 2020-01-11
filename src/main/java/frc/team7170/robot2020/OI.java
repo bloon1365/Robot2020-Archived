@@ -18,7 +18,7 @@ public class OI {
     //Misc values
 
     public static final double JOY_DEADZONE = 0.05;
-    public static final double DRIVE_THROTTLE = 0.5;
+    public static final double DRIVE_THROTTLE = 1;
 
 
     public final Joystick JOYSTICK = new Joystick(RobotMap.JOYSTICK.value);
